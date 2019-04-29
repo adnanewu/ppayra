@@ -185,7 +185,7 @@
                             
                             <p class="text-muted m-0">Administrator</p>
                         </div>
-                    </div>   2nd lonin ends
+                    </div>   2nd login ends
  -->                    <!--- Divider -->
 
                     <div id="sidebar-menu">
@@ -324,20 +324,15 @@
                                 </ul>
                             </li>   other options ends
 
- -->                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
-                                <ul>
-                                    <li class="has_sub">
-                                        <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
-                                        <ul style="">
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
-                                            <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
-                                    </li>
+ -->                           <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Join Table </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{ route('add.parent') }}">Parent Table</a></li> 
+                                    <li><a href="{{ route ('add.child')}}">Child Table</a></li>
+                                    <li><a href="{{ route ('join')}}">Join Both Table</a></li>
+                                        
+                                </ul>
+                            </li>
                                 </ul>
                             </li>
                         </ul>

@@ -77,7 +77,7 @@
       											<td>{{$val->yearly_income}}</td>
       											<td>{{$val->have_you_taken_any_trainning_before}}</td>
       											<td>{{$val->expert_area}}</td>
-      											<td>{{$val->which_type_of_trainning_you_want}}</td
+      											<td>{{$val->which_type_of_trainning_you_want}}</td>
       											<td>
 	                                         	<a href="{{ URL::to('edit-census/'.$val->id) }}" class="btn btn-sm btn-info">Edit</a>
 	                                         	<a href="{{ URL::to('delete-census/'.$val->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>

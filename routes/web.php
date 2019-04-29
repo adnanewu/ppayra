@@ -48,3 +48,23 @@ Route::get('/all_course','CourseController@AllCensus')->name('all.course');
 
 
 
+// ------------------------------------------------------------------
+// Join Table Route are here
+
+Route::get('/add_parent','ParentController@index')->name('add.parent');
+Route::post('/insert-parent','ParentController@store');
+
+Route::get('/add_child','ChildController@index')->name('add.child');
+Route::post('/insert-child','ChildController@store');
+
+
+////// Join 
+
+Route::get('/join','JoinController@Join_Query')->name('join');
+Route::post('/insert-join','JoinController@store');
+Route::get('/all_join','JoinController@AllTable')->name('all.join');
+
+
+
+
+
