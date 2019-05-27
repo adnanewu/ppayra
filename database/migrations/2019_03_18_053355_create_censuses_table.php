@@ -36,7 +36,7 @@ class CreateCensusesTable extends Migration
             $table->string('have_you_taken_trainnng');
             $table->string('mention_how_many_days');
             $table->string('expert_area');
-            $table->string('which_type_of_trainning_you_want');
+            $table->string('course_id');
             $table->timestamps();
         });
     }

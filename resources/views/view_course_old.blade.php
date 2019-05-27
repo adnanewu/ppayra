@@ -9,7 +9,7 @@
        <!-- Page-Title -->
        <div class="row">
         <div class="col-sm-12">
-            <h4 class="pull-left page-title"></h4>
+            <h4 class="pull-left page-title">!!!</h4>
                 <ol class="breadcrumb pull-right">
                     <li><a href="#">DORP</a></li>
                         <li class="active">IT</li>
@@ -22,35 +22,33 @@
                         	<div class="col-md-2"></div>
                             <div class="col-md-8">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"><h3 class="panel-title">Add Child Table</h3></div>
+                                    <div class="panel-heading"><h3 class="panel-title">View Course</h3></div>
                                     <div class="panel-body">
-                                        <form role="form" action="{{url('/insert-child')}}" method="post"
-                                        enctype="multipart/form-data">
+                                        
                                             @csrf
-                                            
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Full Name</label>
-                                                <input type="text" class="form-control" name="name" placeholder=" Full Name">
+                                                <label for="exampleInputEmail1">Course</label>
+                                                <p>{{$single->course_id}}</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Fathers_name</label>
-                                                <input type="text" class="form-control" name="fathers_name" placeholder="Fathers_name">
+                                                <label for="exampleInputPassword1">Duration</label>
+                                                <p>{{$single->duration_desc}}</p>
                                             </div>
-                                            
-                                            
-                                            
-                                            
-                                            
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Date Of Birth</label>
-                                                <input type="date" name="dob" placeholder="Enter Date of Birth">
+                                                <label for="exampleInputPassword1">Time</label>
+                                                <p>{{$single->time_desc}}</p>
                                             </div>
-                       	                     
                                             
                                             
                                             
-                                            <button type="submit" class="btn btn-purple waves-effect waves-light">Submit</button>
-                                        </form>
+                                                
+                                            
+                                                
+                                            
+                                            </div>
+                                            
+                                            
+                                        
                                     </div><!-- panel-body -->
                                     
                                 </div> <!-- panel -->

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use DB;
 
@@ -27,4 +26,35 @@ class JoinController extends Controller
                //$sub = DB::table('parents')
                       
         }
+        public function Join_tree_q()
+        {
+          $data = DB::table('parents')
+            ->join('childs', 'parents.id', '=', 'childs.id')
+            ->join('gender', 'parents.gender_id', '=', 'gender.gender_id')
+            ->join('trees','parents.id','=', 'trees.id')
+            ->select('parents.*','childs.*','gender.gender_desc','trees.*')
+            ->get();
+
+               return view('Join_tree',compact('data')); 
+        }
+                    /*class SomeClass {
+                    private $some = 'hello';
+
+                    public function f1()
+                    {
+                    return $this->some;
+                    }
+                   public function f2() 
+                   {
+                     $this->some = 'something else';
+                    }
+                                       }
+            echo "<pre>";
+            print_r($some)*/
+            public function editJoin($id){
+                $data=parents::where('id',$id)->first();
+        return view('joinedit',compact('data'));
+
+            }
 }
+

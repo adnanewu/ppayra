@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -10,6 +11,15 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <!--Ajax-->
+     <!--Ajax End-->
+    <!-- Multiselect -->
+
+
+
+    
+      <link href="http://bladephp.co/download/multiselect/jquery.multiselect.css" rel="stylesheet" />
+    
     
         <link href="{{asset('public/admin/css/bootstrap.min.css')}}" rel="stylesheet" />
 
@@ -32,6 +42,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
 
     
 </head>
@@ -199,6 +210,8 @@
                                 <ul class="list-unstyled">
                                     <li><a href="{{ route ('add.census')}}">Add Affected Person</a></li>
                                     <li><a href="{{ route ('all.census')}}">All Affected Persons</a></li>
+                                    <li><a href="{{ route ('search.census')}}">Search  Persons</a></li>
+
                                     
                                 </ul>
                             </li>
@@ -217,8 +230,8 @@
                             <li class="has_sub">
                                 <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Course </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{ route('add.course') }}">Add Couese</a></li> 
-                                    <li><a href="{{ route ('all.course')}}">All Course</a></li>
+                                    <li><a href="{{ route('add.course') }}">Add Course</a></li> 
+                                    <li><a href="{{ route ('list.course')}}">All Course</a></li>
                                         
                                 </ul>
                             </li>
@@ -388,11 +401,17 @@
         <!-- CUSTOM JS -->
         <script src="{{asset('public/admin/js/jquery.app.js')}}"></script>
 
-        <!-- Dashboard -->
+        <!-- Dashboard 
         <script src="{{asset('public/admin/js/jquery.dashboard.js')}}"></script>
-
+-->
         <!-- Chat -->
         <script src="{{asset('public/admin/js/jquery.chat.js')}}"></script>
+
+        <!--Multiselect -->
+        <!--
+        <script src="http://bladephp.co/download/multiselect/jquery.min.js"></script>
+    -->
+        <script src="http://bladephp.co/download/multiselect/jquery.multiselect.js"></script>
 
         <!-- Todo -->
         <script src="{{asset('public/admin/js/jquery.todo.js')}}"></script>
@@ -406,7 +425,14 @@
                     delay: 100,
                     time: 1200
                 });
+                 $('#multiselect').multiselect({
+            columns: 1,
+            placeholder: 'Select Your Language',
+            search: true,
+            selectAll: true
+        });
             });
+
         </script>
 </body>
 </html>

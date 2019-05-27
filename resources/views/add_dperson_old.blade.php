@@ -24,119 +24,10 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h3 class="panel-title">Add Designated Persons</h3></div>
                                     <div class="panel-body">
-                                    	@if(count($errors)>0)
-                                        @foreach($errors->all() as $error)
-                                       <p class="alert alert-danger">{{$error }}</p>
-
-                                      @endforeach
-                                      @endif
                                         <form role="form" action="{{url('/insert-dperson')}}" method="post"
                                         enctype="multipart/form-data">
                                             @csrf
-                                            <div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <label for="exampleInputEmail1">Enter Trainee Name</label>
-                                                <input type="text" class="form-control" name="trainee_name" placeholder="Enter Trainee Name" value="{{ old('trainee_name') }}">
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <label for="exampleInputPassword1">Relation_with_house_hold</label>
-                                                <input type="text" class="form-control" name="relation_with_house_hold" placeholder=" Relation_with_house_hold" value="{{ old('relation_with_house_hold') }}">
-  </div>
-  <div class="column" style="background-color:#ccc;">
-    <label for="exampleInputPassword1">Fathers_name</label>
-                                                <input type="text" class="form-control" name="fathers_name" placeholder="Fathers_name" value="{{ old('fathers_name') }}">
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <label for="exampleInputPassword1">Mothers_name</label>
-                                                <input type="text" class="form-control" name="mothers_name" placeholder="Mothers_name" value="{{ old('mothers_name') }}">
-  </div>
-</div>
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <label for="exampleInputPassword1">Date Of Birth</label>
-                                                <input type="date" name="dob" placeholder="Enter Date of Birth" value="{{ old('dob') }}">
-  </div>
-  <div class="column" style="background-color:#bbb;">
-                                                @php
-                                                $genders=DB::table('gender')->get();
-                                                 @endphp
-                                                <label for="exampleInputPassword1">Gender</label>
-                                                <select name="gender_id" value="{{ old('gender_id') }}">
-                                                <option value="">Select Gender</option>
-                                                @foreach($genders as $gender)
-                                                <option value="{{ $gender->gender_id }}">{{ $gender->gender_desc }}</option>
-                                                @endforeach>
-                                               </select>
-  </div>
-  <div class="column" style="background-color:#ccc;">
-                                                @php
-                                                $occupations=DB::table('occupation')->get();
-                                                @endphp
-                                                <label for="exampleInputPassword1">Occupation</label>
-                                                <select name="occupation_id" value="{{ old('occupation_id') }}">
-                                                <option value="">Select Occupation</option>
-                                                @foreach($occupations as $occupation)
-                                                <option value="{{ $occupation->occupation_id }}">{{ $occupation->occupation_desc }}</option>
-                                                @endforeach>
-                                                </select>
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    @php
-                                                $religions=DB::table('religion')->get();
-                                                @endphp
-                                                <label for="exampleInputPassword1">Religion</label>
-                                                <select name="religion_id" value="{{ old('religion_id') }}">
-
-                                                
-
-                                                <option value="">Select Religion</option>
-                                                @foreach($religions as $religion)
-                                                <option value="{{ $religion->religion_id }}">{{ $religion->religion_desc }}</option>
-                                                @endforeach>
-                                                </select>
-  </div>
-</div>
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-                                                @php
-                                                $educations=DB::table('education')->get();
-                                                @endphp
-                                                <label for="exampleInputPassword1">Education</label>
-                                                <select name="education_id" value="{{ old('education_id') }}">
-                                                <option value="">Select Education</option>
-                                                @foreach($educations as $education)
-                                                <option value="{{ $education->education_id }}">{{ $education->education_desc }}</option>
-                                                @endforeach>
-                                                </select>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-                                                @php
-                                                $maritals=DB::table('marital')->get();
-                                                @endphp
-                                                <label for="exampleInputPassword1">Marital Status</label>
-                                                <select name="marital_id" value="{{ old('marital_id') }}">
-                                                <option value="">Select Marital Status</option>
-                                                @foreach($maritals as $marital)
-                                                <option value="{{ $marital->marital_id }}">{{ $marital->marital_desc }}</option>
-                                                @endforeach>
-                                                </select>
-  </div>
-  <div class="column" style="background-color:#ccc;">
-    <label for="exampleInputPassword1">Mobile Number</label>
-                                                <input type="text" class="form-control" name="mobile_no" placeholder="Enter Mobile Number"value="{{ old('mobile_no') }}">
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <label for="exampleInputPassword1">Present Address</label>
-                                                <input type="text" class="form-control" name="present_address" placeholder="Enter Address"value="{{ old('present_address') }}">
-  </div>
-</div>
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <label for="exampleInputPassword1">NID</label>
-                                                <input type="text" class="form-control" name="nid" placeholder="Enter NID Number" value="{{ old('nid') }}">
-  </div>
-</div>
-                                            <!--<div class="form-group">
+                                            <div class="form-group">
                                                 <label for="exampleInputEmail1">Enter Trainee Name</label>
                                                 <input type="text" class="form-control" name="trainee_name" placeholder="Enter Trainee Name">
                                             </div>
@@ -236,7 +127,7 @@
                                              <div class="form-group">
                                                 <label for="exampleInputPassword1">NID</label>
                                                 <input type="text" class="form-control" name="nid" placeholder="Enter NID Number">
-                                            </div> -->
+                                            </div>
                                             
                                             
                                                 
@@ -244,9 +135,6 @@
                                             <button type="submit" class="btn btn-purple waves-effect waves-light">Submit</button>
                                         </form>
                                     </div><!-- panel-body -->
-
-
-                                   
                                     
                                 </div> <!-- panel -->
                             </div> <!-- col-->

@@ -15,7 +15,7 @@
                           </ol>
                             </div>
                         </div>
-                        <!--<a href="/list_course">List Course</a>
+                        <!--<a href="/list_course">List Course</a> -->
     <br/>
     <br/>
 <!--<script src="http://bladephp.co/download/multiselect/jquery.min.js"></script>
@@ -27,16 +27,18 @@
 
 
 
-    <form role="form" action="{{url('/insert-course')}}" method="post"
-                                        enctype="multipart/form-data">
+    <form role="form" action="{{ url('/update-course/'.$data->id) }}" method="post"
+                                        enctype="multipart/form-data"> 
+       
         <input type="hidden" name="_token" value="{{csrf_token()}}">
+
                          <!-- Start Widget -->
                         <div class="row">
                         	<!-- Basic example -->
                         	<div class="col-md-2"></div>
                             <div class="col-md-8">
                             <div class="panel panel-default">
-                            <div class="panel-heading"><h3 class="panel-title">Add Courses</h3></div>
+                            <div class="panel-heading"><h3 class="panel-title">Update Courses</h3></div>
                                     <div class="panel-body">
                                         <form role="form">
                                             <div class="form-group">
@@ -47,29 +49,33 @@
                                                 $courses=DB::table('course')->get();
                                                 @endphp
                                                 Courses:<select multiple="" name="course_id[]" required=""  id="multiselect">
-                                                @foreach($courses as $course)
-                                                <option value="{{ $course->course_id }}">{{ $course->course_desc }}</option>
-                                                @endforeach>
-                                                </select>
-
-                                                @php
-                                                $durations=DB::table('duration')->get();
-                                                @endphp
-                                                Duration:<select name="duration_id">
-                                                @foreach($durations as $duration)
-                                                <option value="{{ $duration->duration_id }}">{{ $duration->duration_desc }}</option>
-                                                @endforeach>
         
+                                                @foreach($courses as $course)
+                                                <option value="{{ $course->course_id }}" {{ in_array($course->course_id, explode(",", $data->course_id)) ? 'selected': '' }}>{{ $course->course_desc }}</option>
+                                                @endforeach
                                                </select>
 
-                                                @php
-                                                $times=DB::table('time')->get();
-                                                @endphp
-                                                Time:<select name="time_id">
-                                                @foreach($times as $time)
-                                                <option value="{{ $time->time_id }}">{{ $time->time_desc }}</option>
-                                                @endforeach>
+
+
+     
+                                               @php
+                                               $durations=DB::table('duration')->get();
+                                               @endphp
+                                               Duration:<select name="duration_id">
         
+                                               @foreach($durations as $duration)
+                                               <option value="{{ $duration->duration_id }}" {{ $duration->duration_id == $data->duration_id ? 'selected': '' }}>{{ $duration->duration_desc }}</option>
+                                               @endforeach
+                                               </select>
+
+                                               @php
+                                               $times=DB::table('time')->get();
+                                               @endphp
+                                               Duration:<select name="time_id">
+        
+                                               @foreach($times as $time)
+                                               <option value="{{ $time->time_id }}" {{ $time->time_id == $data->time_id ? 'selected': '' }}>{{ $time->time_desc }}</option>
+                                               @endforeach
                                                </select>
 
                                                 

@@ -9,7 +9,7 @@
        <!-- Page-Title -->
        <div class="row">
         <div class="col-sm-12">
-            <h4 class="pull-left page-title">Welcome !</h4>
+            <h4 class="pull-left page-title"></h4>
                 <ol class="breadcrumb pull-right">
                     <li><a href="#">DORP</a></li>
                         <li class="active">IT</li>
@@ -22,11 +22,115 @@
                         	<div class="col-md-2"></div>
                             <div class="col-md-8">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"><h3 class="panel-title">View Designated Person</h3></div>
+                                    <div class="panel-heading"><h3 class="panel-title">View Affected Person</h3></div>
                                     <div class="panel-body">
                                         
                                             @csrf
-                                            <div class="form-group">
+
+                                            <div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <label for="exampleInputEmail1">Enter Household_id</label>
+                                                <p>{{$single->household_id}}</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <label for="exampleInputPassword1">Full Name</label>
+                                                <p>{{$single->name}}</p>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <label for="exampleInputPassword1">Fathers_name</label>
+                                                <p>{{$single->fathers_name}}</p>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <label for="exampleInputPassword1">Mothers_name</label>
+                                                <p>{{$single->mothers_name}}</p>
+  </div>
+</div>
+ <div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <label for="exampleInputPassword1">
+                                              Occupation</label>
+                                               <p>{{$single->occupation_desc}}</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <label for="exampleInputPassword1">Mobile Number</label>
+                                                <p>{{$single->mobile_no}}</p>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <label for="exampleInputPassword1">NID</label>
+                                                <p>{{$single->nid}}</p>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <label for="exampleInputPassword1">Education</label>
+                                                <p>{{$single->education_desc}}</p>
+  </div>
+</div>
+ <div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <label for="exampleInputPassword1">Date Of Birth</label>
+                                                <p>{{$single->dob}}</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <label for="exampleInputPassword1">Gender</label>
+                                                    <p>{{$single->gender_desc}}</p>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <label for="exampleInputPassword1">Religion</label>
+                                                <p>{{$single->religion_desc}}</p>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <label for="exampleInputPassword1">Marital Status</label>
+                                                <p>{{$single->marital_desc}}</p>
+  </div>
+</div>
+ <div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <label for="exampleInputPassword1">Present Address</label>
+                                                <p>{{$single->present_address}}</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <label for="exampleInputPassword1">Ward</label>
+                                                <p>{{$single->ward_desc}}</p>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <label for="exampleInputPassword1">Thana</label>
+                                                <p>{{$single->thana_desc}}</p>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <label for="exampleInputPassword1">Zilla</label>
+                                                <p>{{$single->zilla_desc}}</p>
+  </div>
+</div>
+ <div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <label for="exampleInputPassword1">Enter Land Number</label>
+                                                <p>{{$single->affected_land_no}}</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <label for="exampleInputPassword1">Enter Early Income</label>
+                                                <p>{{$single->yearly_income}}</p>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <label for="exampleInputPassword1">Have_you_taken_trainnng</label>
+                                                <p>{{$single->have_you_taken_trainnng}}</p>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <label for="exampleInputPassword1">Mention_how_many_days</label>
+                                                <p>{{$single->mention_how_many_days}}</p>
+  </div>
+  <div class="row">
+  </div>
+  <div class="column" style="background-color:#aaa;">
+    <label for="exampleInputPassword1">Expert_area</label>
+                                                <p>{{$single->expert_area}}</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <label for="exampleInputPassword1">
+                                            course_id</label>
+                                             <p>{{$single->course_desc}}</p>
+  </div>
+  
+
+                                            <!--<div class="form-group">
                                                 <label for="exampleInputEmail1">Enter Household_id</label>
                                                 <p>{{$single->household_id}}</p>
                                             </div>
@@ -43,18 +147,12 @@
                                                 <p>{{$single->mothers_name}}</p>
                                             </div>
                                             <div class="form-group">
-                                                @php
-                                                $occupations=DB::table('occupation')->get();
-                                                @endphp
-                                                <label for="exampleInputPassword1">Occupation</label>
-                                                <select name="occupation_id">
-                                                <option value="">Select Occupation</option>
-                                                @foreach($occupations as $occupation)
-                                                <option value="{{ $occupation->occupation_id }}">{{ $occupation->occupation_desc }}</option>
-                                                @endforeach>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
+                                                
+                                              <label for="exampleInputPassword1">
+                                              Occupation</label>
+                                               <p>{{$single->occupation_id}}</p>
+                                              </div>
+                                              <div class="form-group">
                                                 <label for="exampleInputPassword1">Mobile Number</label>
                                                 <p>{{$single->mobile_no}}</p>
                                             </div>
@@ -62,99 +160,59 @@
                                                 <label for="exampleInputPassword1">NID</label>
                                                 <p>{{$single->nid}}</p>
                                             </div>
-                                            <div class="form-group">
-                                            	@php
-                                                $educations=DB::table('education')->get();
-                                                @endphp
+                                                <div class="form-group">
+                                            	
                                                 <label for="exampleInputPassword1">Education</label>
-                                                <select name="education_id">
-                                                <option value="">Select Education</option>
-                                                @foreach($educations as $education)
-                                                <option value="{{ $education->education_id }}">{{ $education->education_desc }}</option>
-                                                @endforeach>
-                                                </select>
-                                            </div>
+                                                <p>{{$single->education_desc}}</p>
+                                                </div>
+                                            
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Date Of Birth</label>
                                                 <p>{{$single->dob}}</p>
                                             </div>
                        	                     <div class="form-group">
-                                                @php
-                                                $genders=DB::table('gender')->get();
-                                                 @endphp
-                                                <label for="exampleInputPassword1">Gender</label>
-                                                	<select name="gender_id">
-                                                <option value="">Select Gender</option>
-                                                @foreach($genders as $gender)
-                                                <option value="{{ $gender->gender_id }}">{{ $gender->gender_desc }}</option>
-                                                @endforeach>
-                                               </select>  
                                                 
-                                            </div>
+                                                <label for="exampleInputPassword1">Gender</label>
+                                                	<p>{{$single->gender_desc}}</p>
+                                              </div> 
+                                                
+                                            
                                             <div class="form-group">
-                                                @php
-                                                $religions=DB::table('religion')->get();
-                                                @endphp
+                                                
                                                 <label for="exampleInputPassword1">Religion</label>
-                                                <select name="religion_id">
-                                                <option value="">Select Religion</option>
-                                                @foreach($religions as $religion)
-                                                <option value="{{ $religion->religion_id }}">{{ $religion->religion_desc }}</option>
-                                                @endforeach>
-                                                </select>
-                                                </div>
+                                                <p>{{$single->religion_id}}</p>
+                                              </div>
+                                            
                                             <div class="form-group">
-                                                @php
-                                                $maritals=DB::table('marital')->get();
-                                                @endphp
+                                                
                                                 <label for="exampleInputPassword1">Marital Status</label>
-                                                <select name="marital_id">
-                                                <option value="">Select Marital Status</option>
-                                                @foreach($maritals as $marital)
-                                                <option value="{{ $marital->marital_id }}">{{ $marital->marital_desc }}</option>
-                                                @endforeach>
-                                                </select>
-                                            </div>
+                                                <p>{{$single->marital_id}}</p>
+                                              </div>
+                                            
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Present Address</label>
                                                 <p>{{$single->present_address}}</p>
                                             </div>
                                             <div class="form-group">
-                                                @php
-                                                $wards=DB::table('ward')->get();
-                                                @endphp
+                                                
                                                 <label for="exampleInputPassword1">Ward</label>
-                                                <select name="ward_id">
-                                                <option value="">Select Ward</option>
-                                                @foreach($wards as $ward)
-                                                <option value="{{ $ward->ward_id }}">{{ $ward->ward_desc }}</option>
-                                                @endforeach>
-                                                </select>
-                                            </div>
+                                                <p>{{$single->ward_id}}</p>
+                                              </div>
+                                                
+                                            
                                             <div class="form-group">
-                                                @php
-                                                $thanas=DB::table('thana')->get();
-                                                @endphp
+                                                
+                
                                                 <label for="exampleInputPassword1">Thana</label>
-                                                <select name="thana_id">
-                                                <option value="">Select Thana</option>
-                                                @foreach($thanas as $thana)
-                                                <option value="{{ $thana->thana_id }}">{{ $thana->thana_desc }}</option>
-                                                @endforeach>
-                                                </select>
-                                            </div>
+                                                <p>{{$single->thana_id}}</p>
+                                              </div>
+                                            
                                             <div class="form-group">
-                                                @php
-                                                $zillas=DB::table('zilla')->get();
-                                                @endphp
+                                                
                                                 <label for="exampleInputPassword1">Zilla</label>
-                                                <select name="zilla_id">
-                                                <option value="">Select zilla</option>
-                                                @foreach($zillas as $zilla)
-                                                <option value="{{ $zilla->zilla_id }}">{{ $zilla->zilla_desc }}</option>
-                                                @endforeach>
-                                                </select>
-                                            </div>
+                                                <p>{{$single->zilla_id}}</p>
+                                              </div>
+                                            
                                             
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Enter Land Number</label>
@@ -176,18 +234,21 @@
                                                 <label for="exampleInputPassword1">Expert_area</label>
                                                 <p>{{$single->expert_area}}</p>
                                             </div>
+                                                 
                                             <div class="form-group">
-                                                @php
-                                                 $courses=DB::table('course')->get();
-                                                 @endphp
-                                                <label for="exampleInputPassword1">Preffered Trainning Course</label>
-                                                <select name="which_type_of_trainning_you_want">
-                                                <option value="">Select Option</option>
-                                                @foreach($courses as $course)
-                                                <option value="{{ $course->course_id }}">{{ $course->course_desc }}</option>
-                                                @endforeach>
-                                                </select>
+                                            <label for="exampleInputPassword1">
+                                            course_id</label>
+                                             <p>{{$single->course_id}}</p>
+                                              </div>-->
+                                                
+                                            
+                                            
                                             </div>
+                                               
+                                           
+
+                                                
+                                            
                                             
                                             
                                         

@@ -6,7 +6,7 @@
             <!-- Page-Title -->
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 class="pull-left page-title">Welcome !</h4>
+                    <h4 class="pull-left page-title"></h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="#">DORP</a></li>
                         <li class="active">IT</li>
@@ -28,15 +28,15 @@
 	                                  <thead>
 	                                      <tr>
 	                                        <th>No</th>
-      										                <th>household_id</th>
-      										                <th>name</th>
-      										                <th>fathers_name</th>
-      										                <th>Mothers</th>
+      										                <th>HHID</th>
+      										                <th>Name</th>
+      										                <th>Fname</th>
+      										                <th>Mname</th>
                                           <th>nid</th>
                                           <th>dob</th>
                                           <th>Gender</th>
                                           <th>Child_name</th>
-                                          <th>Child_fathers_name</th>
+                                          <th>Child_fname</th>
                                           <th>Child_dob</th>
 
                                         </tr>
@@ -57,6 +57,7 @@
                             <td>{{$val->Child_name}}</td>
                             <td>{{$val->Child_fathers_name}}</td>
                             <td>{{$val->Child_dob}}</td>
+                            <td>
       											
       										  
 	                         <a href="{{ URL::to('edit-dperson/'.$val->id) }}" class="btn btn-sm btn-info">Edit</a>

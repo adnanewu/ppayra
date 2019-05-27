@@ -19,50 +19,39 @@
 	          <div class="col-md-12">
 	              <div class="panel panel-default">
 	                  <div class="panel-heading">
-	                      <h3 class="panel-title">All Affected Person</h3>
+	                      <h3 class="panel-title">Showing All Course</h3>
 	                  </div>
 	                  <div class="panel-body">
+                      <!--<center><a href="/add_course">ADD Course</a></center> -->
 	                      <div class="row">
 	                          <div class="col-md-12 col-sm-12 col-xs-12">
 	                              <table id="datatable" class="table table-striped table-bordered">
 	                                  <thead>
 	                                      <tr>
-	                                        <th>No</th>
-      										                <th>HHID</th>
-      										                <th>Name</th>
-      										                <th>F_name</th>
-      										                <th>M_name</th>
-      										               
-      										                <th>Mobile_no</th>
-      										                <th>NID</th>
-      										                <th>Education</th>
-      										                <!--<th>Dob</th>-->
-     										                  <th>Gender</th>
+                                          <th>No</th>
+                                          <th>Courses</th>
+                                          <th>Duration</th>
+                                          <th>Time</th>
+                                          <th>Action</th>
+    
       										                
-      										            </tr>
+      										              </tr>
 	                                  </thead>
                                     <tbody>
 	                                  	
 	                                      
-	                       @foreach($data as $key=>$val)
-
+	                       @foreach($data as $key=>$vale)
     										<tr>
-      											<td>{{++$key}}</td>
-      											<td>{{$val->household_id}}</td>
-      											<td>{{$val->name}}</td>
-      											<td>{{$val->fathers_name}}</td>
-      											<td>{{$val->mothers_name}}</td>
+      											<tr>
+                              <td>{{++$key}}</td>
+                              <td>{{$vale->course_id }}</td>
+                              <td>{{$vale->duration_desc}}</td>
+                              <td>{{$vale->time_desc}}</td>
       											
-      											<td>{{$val->mobile_no}}</td>
-      											<td>{{$val->nid}}</td>
-      											<td>{{$val->education_desc}}</td>
-      											<!--<td>{{$val->dob}}</td>-->
-      											<td>{{$val->gender_desc}}</td>
-      											
-      											<td>
-	                                         	<a href="{{ URL::to('edit-census/'.$val->id) }}" class="btn btn-sm btn-info">Edit</a>
-	                                         	<a href="{{ URL::to('delete-census/'.$val->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
-	                                         	<a href="{{ URL::to('view-census/'.$val->id) }}" class="btn btn-sm btn-primary">View</a>
+      											  <td>
+	                                         	<a href="{{ URL::to('edit-course/'.$vale->id) }}" class="btn btn-sm btn-info">Edit</a>
+	                                         	<a href="{{ URL::to('Del-course/'.$vale->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+	                                         	<a href="{{ URL::to('view-course/'.$vale->id) }}" class="btn btn-sm btn-primary">View</a>
 	                                         </td>
 	                                         </tr>
 	                                    @endforeach
